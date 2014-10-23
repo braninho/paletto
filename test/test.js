@@ -22,5 +22,4 @@ PalettoTestCase.prototype.testStory1 = function () {
             }
         }
     }
-
 };
