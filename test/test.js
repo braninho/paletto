@@ -31,3 +31,13 @@ PalettoTestCase.prototype.testStory2 = function () {
     paletto.take(5,0);
     assertTrue(paletto.getBallGrid(5,0) === -1);
 };
+
+PalettoTestCase.prototype.testStory3 = function () {
+    var paletto = new Engine();
+    paletto.init();
+    paletto.fill();
+    paletto.take(5,0);
+    assertTrue(paletto.getBallGrid(5,0) === -1);
+    assertTrue(paletto.getNbBall() === 35);
+    assertTrue(paletto.getNbBallPlayer(1,5) === 1);
+};
