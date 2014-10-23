@@ -28,6 +28,6 @@ PalettoTestCase.prototype.testStory2 = function () {
     var paletto = new Engine();
     paletto.init();
     paletto.fill();
-    paletto.take(6,0);
-    assertTrue(paletto.getBallGrid(6,0) === -1);
+    paletto.take(5,0);
+    assertTrue(paletto.getBallGrid(5,0) === -1);
 };

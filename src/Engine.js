@@ -4,6 +4,7 @@ var Engine = function () {
 
 // private attributes and methods
     var grid = new Array(6);
+    const NULL = -1;
     const BLACK = 0;
     const WHITE = 1;
     const GREEN = 2;
@@ -70,6 +71,8 @@ var Engine = function () {
         grid[line][column] = color;
     };
 
-
+    this.take = function (line, column) {
+        this.setBallGrid(line,column,NULL);
+    };
 
 };
