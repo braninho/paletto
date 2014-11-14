@@ -4,6 +4,10 @@ var Engine = function () {
 
 // private attributes and methods
     var grid = new Array(6);
+    var player1 = new Array(6);
+    var player2 = new Array(6)
+
+    var nbBall = 0;
     const NULL = -1;
     const BLACK = 0;
     const WHITE = 1;
@@ -61,6 +65,8 @@ var Engine = function () {
         this.setBallGrid(5,3,RED);
         this.setBallGrid(5,4,GREEN);
         this.setBallGrid(5,5,BLACK);
+
+        nbBall = 36;
     };
 
     this.getBallGrid = function (line, column) {
@@ -73,6 +79,6 @@ var Engine = function () {
 
     this.take = function (line, column) {
         this.setBallGrid(line,column,NULL);
+        nbBall -= 1;
     };
-
 };
