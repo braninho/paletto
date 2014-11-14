@@ -41,3 +41,17 @@ PalettoTestCase.prototype.testStory3 = function () {
     assertTrue(paletto.getNbBall() === 35);
     assertTrue(paletto.getNbBallPlayer(0,5) === 1);
 };
+
+PalettoTestCase.prototype.testStory4 = function () {
+    var paletto = new Engine();
+    paletto.init();
+    paletto.fill();
+    paletto.takeBloc('A6');
+    paletto.switchPlayer();
+    assertTrue(paletto.getCurrentPlayer() === 1);
+    paletto.takeBloc('A1');
+    paletto.takeBloc('F6');
+    assertTrue(paletto.getNbBallPlayer(1,0) === 2);
+
+
+};
