@@ -118,10 +118,21 @@ var Engine = function () {
     };
 
     this.switchPlayer = function (){
-        currentPlayer += 1%2;
+        currentPlayer = (currentPlayer + 1) % 2;
     }
 
     this.getCurrentPlayer = function () {
         return currentPlayer;
+    }
+
+    this.win = function () {
+        for(var i = 0;i<2;i++){
+            for(var j = 0;j<6;j++){
+                if(ballPlayers[i][j] == 6){
+                    return i;
+                }
+            }
+        }
+        return -1;
     }
 };
