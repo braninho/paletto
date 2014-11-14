@@ -157,3 +157,9 @@ PalettoTestCase.prototype.testStory7 = function () {
     assertTrue(paletto.win() === 0);
     assertTrue(paletto.getNbBall() === 0);
 };
+
+PalettoTestCase.prototype.testStory7 = function () {
+    var paletto = new Engine();
+    paletto.init();
+    paletto.fill();
+}
