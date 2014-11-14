@@ -52,6 +52,4 @@ PalettoTestCase.prototype.testStory4 = function () {
     paletto.takeBloc('A1');
     paletto.takeBloc('F6');
     assertTrue(paletto.getNbBallPlayer(1,0) === 2);
-
-
 };

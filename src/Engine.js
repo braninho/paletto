@@ -116,4 +116,12 @@ var Engine = function () {
     this.getNbBallPlayer = function (player,color) {
         return ballPlayers[player][color];
     };
+
+    this.switchPlayer = function (){
+        currentPlayer += 1%2;
+    }
+
+    this.getCurrentPlayer = function () {
+        return currentPlayer;
+    }
 };
