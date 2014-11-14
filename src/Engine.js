@@ -4,8 +4,8 @@ var Engine = function () {
 
 // private attributes and methods
     var grid = new Array(6);
-    var player1 = new Array(6);
-    var player2 = new Array(6)
+    var currentPlayer = 0;
+    var ballPlayers = new Array(2);
 
     var nbBall = 0;
     const NULL = -1;
@@ -24,6 +24,14 @@ var Engine = function () {
             grid[column] = new Array(6);
             for (line = 0; line < 6; line = line + 1) {
                 grid[column][line] = -1;
+            }
+        }
+        ballPlayers[0] = new Array(6);
+        ballPlayers[1] = new Array(6);
+
+        for(var i = 0; i < 2 ; i++){
+            for(var y = 0; y < 6; y++){
+                ballPlayers[i][y] = 0;
             }
         }
     };
@@ -78,7 +86,34 @@ var Engine = function () {
     };
 
     this.take = function (line, column) {
+        ballPlayers[currentPlayer][this.getBallGrid(line,column)] += 1;
         this.setBallGrid(line,column,NULL);
         nbBall -= 1;
+    };
+
+    this.takeBloc = function (bloc) {
+        var positionx, positiony;
+        positionx = bloc.charCodeAt(1) - 49;
+        positiony = bloc.charCodeAt(0) - 65;
+
+        ballPlayers[currentPlayer][this.getBallGrid(positionx,positiony)] += 1;
+        this.setBallGrid(positionx,positiony,NULL);
+        nbBall -= 1;
+    };
+
+    this.getBallGridBloc = function (bloc) {
+        var positionx, positiony;
+        positionx = bloc.charCodeAt(1) - 49;
+        positiony = bloc.charCodeAt(0) - 65;
+
+        return this.getBallGrid(positionx,positiony);
+    };
+
+    this.getNbBall = function () {
+        return nbBall;
+    };
+
+    this.getNbBallPlayer = function (player,color) {
+        return ballPlayers[player][color];
     };
 };

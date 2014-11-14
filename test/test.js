@@ -36,8 +36,8 @@ PalettoTestCase.prototype.testStory3 = function () {
     var paletto = new Engine();
     paletto.init();
     paletto.fill();
-    paletto.take('A6');
-    assertTrue(paletto.getBallGrid('A6') === -1);
+    paletto.takeBloc('A6');
+    assertTrue(paletto.getBallGridBloc('A6') === -1);
     assertTrue(paletto.getNbBall() === 35);
-    assertTrue(paletto.getNbBallPlayer(1,5) === 1);
+    assertTrue(paletto.getNbBallPlayer(0,5) === 1);
 };
